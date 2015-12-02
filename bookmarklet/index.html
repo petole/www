@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Defeat CSP</title>
+  <meta name="description" content="Petole Collection of tools">
+  <meta name="author" content="Petole">
+  <style>
+    .browser {
+      display: inline-block;
+    }
+    
+  </style>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+</head>
+
+<body>
+  <p>Who says bookmarklets are dead ? Here you can make bookmarklets that will defeat <a href="https://en.wikipedia.org/wiki/Content_Security_Policy">CSP</a></p>
+
+  <p>How does that work ? Traditional bookmarklets requests resources once loaded, which most of the time, gets denied by CSP, see <a href="http://www.codeproject.com/Articles/494559/The-Slow-Death-of-Bookmarklets">this article</a> for more info</p>
+
+  <p>There is a solution: self contained bookmarklet. This page will help you do just that:</p>
+  <input type="file" 
+         autocomplete="file" 
+         autocorrect="on" 
+         placeholder="Upload a JavaScript file"
+         multiple="true"
+         accept=".js"
+         size="40"></input>
+  or
+  <form>
+  <input type="url" 
+         autocomplete="url" 
+         autocorrect="on" 
+         placeholder="url of a JavaScript resource"
+         pattern="https?://.+\.js"
+         size="40"></input>
+  <input type="submit"></input>
+  </form>
+  <textarea rows="4" cols="80">
+  </textarea>
+  <button>GENERATE BOOKMARKLET !</button>
+
+  
+  <ul>List of known JavaScript Libraries:
+    <li>https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js</li>
+    <li>https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js</li>
+    <li>https://code.jquery.com/jquery-2.1.4.min.js</li>
+  </ul> 
+  <p>Note: some browsers have a hard limit in terms of bookmarklet's size. Here are the recent findings. Please submit a pull request if you have updated data:</p>
+  <div>
+    <div><span class="browser">Google Chrome:</span><span class="max-size">10K</span></div>
+    <div><span class="browser">Firefox:</span><span class="max-size">2K</span></div>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
